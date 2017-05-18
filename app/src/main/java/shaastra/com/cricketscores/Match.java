@@ -5,5 +5,5 @@ package shaastra.com.cricketscores;
  */
 
 public class Match {
-    
+
 }
