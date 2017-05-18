@@ -28,13 +28,13 @@ public class Match {
 
     public String toString(){
         if(showDetails){
-            String s =  team1 + " vs " + team2;
-            s+="\n"+team1Score+"\t \t"+ team2Score;
-            s+="\n"+team1Overs+"\t \t"+ team2Overs;
+            String s =  team1 + "\tvs\t" + team2;
+            s+="\n"+team1Score+"\t  \t"+ team2Score;
+            s+="\n"+team1Overs+"\t  \t"+ team2Overs;
             s+="\n"+ (didTeam1Win()?team1:team2) + " Won";
             return s;
         }
-        return team1 + " vs " + team2;
+        return team1 + "\tvs\t" + team2;
     }
 
 }
