@@ -8,9 +8,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import java.io.Console;
-import java.util.Arrays;
-import java.util.Vector;
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,11 +17,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-
-
-        ArrayAdapter<String> matches = new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1);
+        ArrayList<Match> ms = new ArrayList<Match>();
+        MatchAdapter matches = new MatchAdapter(this, ms);
 
 
         initMatches(matches);
