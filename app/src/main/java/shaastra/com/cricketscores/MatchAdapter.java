@@ -1,6 +1,7 @@
 package shaastra.com.cricketscores;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -42,6 +43,13 @@ public class MatchAdapter extends ArrayAdapter<Match> {
             TextView team2 = (TextView) convertView.findViewById(R.id.team2);
             team1.setText(match.team1 + "\n" + match.team1Score + "\n" + match.team1Overs + "\n" + (b?"Won":"Lost"));
             team2.setText(match.team2 + "\n" + match.team2Score + "\n" + match.team2Overs + "\n" + (b?"Lost":"Won"));
+            if(b){
+                team1.setBackgroundColor(Color.argb(100,0,255,0));
+                team2.setBackgroundColor(Color.argb(100,255,0,0));
+            }else{
+                team2.setBackgroundColor(Color.argb(100,0,255,0));
+                team1.setBackgroundColor(Color.argb(100,255,0,0));
+            }
         }else{
             TextView text = (TextView) convertView.findViewById(R.id.text);
             text.setGravity(Gravity.CENTER_HORIZONTAL);

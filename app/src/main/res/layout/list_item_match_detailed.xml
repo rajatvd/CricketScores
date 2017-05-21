@@ -23,7 +23,9 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:text="Team\nScore\nOvers\nResult"
-        android:padding="5dp"/>
+        android:padding="5dp"
+        android:textSize="20dp"
+        android:textColor="#000000"/>
 
 
     <LinearLayout
@@ -37,7 +39,9 @@
             android:text="Team1"
             android:layout_weight="1"
             android:padding="5dp"
-            android:gravity="center_horizontal"/>
+            android:gravity="center_horizontal"
+            android:textSize="20dp"
+            android:textColor="#000000"/>
 
         <TextView
             android:id="@+id/team2"
@@ -46,7 +50,9 @@
             android:text="Team2"
             android:layout_weight="1"
             android:padding="5dp"
-            android:gravity="center_horizontal"/>
+            android:gravity="center_horizontal"
+            android:textSize="20dp"
+            android:textColor="#000000"/>
     </LinearLayout>
 
 </LinearLayout>

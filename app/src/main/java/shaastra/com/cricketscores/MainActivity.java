@@ -58,17 +58,19 @@ public class MainActivity extends AppCompatActivity {
         m2.team2Score = "111/5";
         m2.team2Overs = "20";
         m.add(m2);
-        Match m3 = new Match("DD", "KKR");
-        m3.team1Score = "90/10";
-        m3.team1Overs = "13";
-        m3.team2Score = "91/2";
-        m3.team2Overs = "15.3";
-        m.add(m3);
         Match m4 = new Match("SRH", "RCB");
         m4.team1Score = "178/8";
         m4.team1Overs = "20";
         m4.team2Score = "130/9";
         m4.team2Overs = "20";
         m.add(m4);
+
+        Match m3 = new Match("DD", "KKR");
+        m3.team1Score = "90/10";
+        m3.team1Overs = "13";
+        m3.team2Score = "91/2";
+        m3.team2Overs = "15.3";
+        m.add(m3);
+
     }
 }
