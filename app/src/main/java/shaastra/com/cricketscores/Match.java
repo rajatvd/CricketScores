@@ -5,8 +5,8 @@ package shaastra.com.cricketscores;
  */
 
 public class Match {
-    String team1, team1Score, team1Overs,
-            team2, team2Score, team2Overs;
+    String team1, team1Score, team1Overs, team1Status,
+            team2, team2Score, team2Overs, team2Status;
 
     public boolean showDetails;
 
@@ -17,9 +17,11 @@ public class Match {
         team2Score = "0/0";
         team1Overs = "0";
         team2Overs = "0";
+        team1Status = "Batting";
+        team2Status = "Bowling";
     }
 
-    public boolean didTeam1Win(){
+    /*public boolean didTeam1Win(){
         // Compare the runs scored by each team to determine if team 1 won or not
         int team1runs = Integer.parseInt(team1Score.split("/")[0]);
         int team2runs = Integer.parseInt(team2Score.split("/")[0]);
@@ -35,6 +37,6 @@ public class Match {
             return s;
         }
         return team1 + "\tvs\t" + team2;
-    }
+    }*/
 
 }
