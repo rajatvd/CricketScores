@@ -5,10 +5,13 @@ package shaastra.com.cricketscores;
  */
 
 public class Match {
+    // A match class which holds all data regarding matches as strings.
+    // This is not too impractical as all actual data can be parsed to this form, and any
+    // validations on the data can be performed at a previous stage(as that depends on how it is stored).
     String team1, team1Score, team1Overs, team1Status,
             team2, team2Score, team2Overs, team2Status;
 
-    public boolean showDetails;
+    public boolean showDetails; // Whether details of the matches should be displayed or not
 
     public Match(String team11, String team22){
         team1 = team11;

@@ -18,9 +18,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ArrayList<Match> ms = new ArrayList<Match>();
-        MatchAdapter matches = new MatchAdapter(this, ms);
+        MatchAdapter matches = new MatchAdapter(this, ms); // Setup our custom list adapter
 
-
+        // Setup some sample matches
         initMatches(matches);
 
         ListView listView = (ListView) findViewById(R.id.listView);
@@ -29,12 +29,13 @@ public class MainActivity extends AppCompatActivity {
 
         AdapterView.OnItemClickListener mMessageClickedHandler = new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView parent, View v, int position, long id) {
-                Log.i("test",parent.getAdapter().getItem(position)+"");
+                Log.i("test",parent.getAdapter().getItem(position)+""); // Gen logging
                 ArrayAdapter mats = (ArrayAdapter) parent.getAdapter();
                 Match m = (Match) mats.getItem(position);
-                m.showDetails = !m.showDetails;
+                m.showDetails = !m.showDetails; // Update whether we want to show details or not
                 Log.i("match", m.showDetails + "");
-                parent.setAdapter(mats);
+                parent.setAdapter(mats); // Reset our adapter so the list view updates based on the new
+                // item view returned by our custom adapter
                 // (ArrayAdapter)(parent.getAdapter()).getItem(position).showDetails = !(ArrayAdapter)(parent.getAdapter()).getItem(position).showDetails;
             }
         };

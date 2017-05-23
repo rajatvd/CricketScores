@@ -16,6 +16,7 @@ import java.util.ArrayList;
  */
 
 public class MatchAdapter extends ArrayAdapter<Match> {
+    // A custom adapter for our list view
 
 
     public MatchAdapter(Context context, ArrayList<Match> matches) {
@@ -27,16 +28,21 @@ public class MatchAdapter extends ArrayAdapter<Match> {
     public View getView(int position, View convertView, ViewGroup parent) {
         // Get the data item for this position
         Match match = getItem(position);
-        // Check if an existing view is being reused, otherwise inflate the view
+
         int layout = 0;
+        // Decide which layout to use based on whether we want to show details or not
         if(match.showDetails){
             layout = R.layout.list_item_match_detailed;
         }else{
             layout = R.layout.list_item_match_simple;
         }
+
+        // Check if an existing view is being reused, otherwise inflate the view
         if (convertView == null) {
             convertView = LayoutInflater.from(getContext()).inflate(layout, parent, false);
         }
+
+        // Detailed display of the match
         if(match.showDetails) {
 
             TextView team1 = (TextView) convertView.findViewById(R.id.team1);
@@ -57,10 +63,14 @@ public class MatchAdapter extends ArrayAdapter<Match> {
                 team1.setBackgroundColor(Color.argb(100,0,200,200));
             }
         }else{
+
+            // Simple display of the match as just the two teams playing, if details are not needed
             TextView text = (TextView) convertView.findViewById(R.id.text);
             text.setGravity(Gravity.CENTER_HORIZONTAL);
             text.setText(match.team1+" vs "+match.team2);
         }
+
+        // return the view which will be displayed in the list view
         return convertView;
     }
 }
